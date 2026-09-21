@@ -174,6 +174,7 @@ def main():
 
     for symbol, yf_ticker in YF_TICKERS.items():
         try:
+            # yfinance 多品种下载时，单个 ticker 的列是一个二级列 (ticker, field)
             if yf_ticker not in data.columns.get_level_values(0):
                 log.warning("%s: 返回数据中没有这个品种，跳过", symbol)
                 skipped += 1
@@ -198,4 +199,40 @@ def main():
                 continue
 
             closes = sub["Close"].tolist()
-            rsi_value
+            rsi_value = compute_rsi(closes, RSI_PERIOD)
+            if rsi_value is None:
+                log.warning("%s: 数据点不足以计算RSI(%d)，跳过", symbol, RSI_PERIOD)
+                skipped += 1
+                continue
+
+            checked += 1
+            current_price = closes[-1]
+            prev_state = state.get(symbol)
+
+            if rsi_value >= RSI_OVERBOUGHT:
+                if prev_state != "high":
+                    log.info("%s RSI=%.2f -> 超买提醒", symbol, rsi_value)
+                    send_discord_alert(symbol, rsi_value, "high", current_price)
+                    alerted += 1
+                state[symbol] = "high"
+            elif rsi_value <= RSI_OVERSOLD:
+                if prev_state != "low":
+                    log.info("%s RSI=%.2f -> 超卖提醒", symbol, rsi_value)
+                    send_discord_alert(symbol, rsi_value, "low", current_price)
+                    alerted += 1
+                state[symbol] = "low"
+            else:
+                if prev_state is not None:
+                    log.info("%s RSI=%.2f 回归中性区间，解除锁定", symbol, rsi_value)
+                state[symbol] = None
+
+        except Exception as e:
+            log.exception("处理 %s 时出错: %s", symbol, e)
+            skipped += 1
+
+    save_state(state)
+    log.info("本轮完成：检测 %d 个，跳过 %d 个，触发提醒 %d 次", checked, skipped, alerted)
+
+
+if __name__ == "__main__":
+    main()
