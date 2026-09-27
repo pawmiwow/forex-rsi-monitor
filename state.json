@@ -1,7 +1,7 @@
 {
   "GBPUSD": null,
   "EURUSD": null,
-  "AUDUSD": null,
+  "AUDUSD": "low",
   "NZDUSD": null,
   "USDCAD": null,
   "USDCHF": null,
@@ -24,7 +24,7 @@
   "EURNZD": null,
   "NZDCAD": null,
   "EURGBP": null,
-  "AUDCAD": null,
+  "AUDCAD": "low",
   "CADJPY": null,
   "GBPJPY": null
 }
