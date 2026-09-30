@@ -5,8 +5,8 @@
   "NZDUSD": null,
   "USDCAD": null,
   "USDCHF": null,
-  "USDJPY": null,
-  "EURJPY": null,
+  "USDJPY": "low",
+  "EURJPY": "low",
   "AUDCHF": null,
   "CHFJPY": null,
   "GBPAUD": null,
@@ -25,6 +25,6 @@
   "NZDCAD": null,
   "EURGBP": null,
   "AUDCAD": null,
-  "CADJPY": null,
+  "CADJPY": "low",
   "GBPJPY": null
 }
