@@ -1,10 +1,10 @@
 {
   "GBPUSD": "low",
-  "EURUSD": "low",
+  "EURUSD": null,
   "AUDUSD": null,
-  "NZDUSD": "low",
+  "NZDUSD": null,
   "USDCAD": null,
-  "USDCHF": "high",
+  "USDCHF": null,
   "USDJPY": null,
   "EURJPY": null,
   "AUDCHF": null,
@@ -12,8 +12,8 @@
   "GBPAUD": null,
   "EURAUD": null,
   "AUDJPY": null,
-  "NZDJPY": "low",
-  "GBPCAD": "low",
+  "NZDJPY": null,
+  "GBPCAD": null,
   "EURCAD": null,
   "AUDNZD": null,
   "NZDCHF": null,
@@ -22,9 +22,9 @@
   "CADCHF": null,
   "GBPNZD": null,
   "EURNZD": null,
-  "NZDCAD": "low",
+  "NZDCAD": null,
   "EURGBP": null,
   "AUDCAD": null,
   "CADJPY": null,
-  "GBPJPY": "low"
+  "GBPJPY": null
 }
