@@ -6,9 +6,9 @@
   "USDCAD": null,
   "USDCHF": null,
   "USDJPY": null,
-  "EURJPY": null,
+  "EURJPY": "high",
   "AUDCHF": null,
-  "CHFJPY": null,
+  "CHFJPY": "high",
   "GBPAUD": null,
   "EURAUD": null,
   "AUDJPY": null,
@@ -26,5 +26,5 @@
   "EURGBP": null,
   "AUDCAD": null,
   "CADJPY": null,
-  "GBPJPY": null
+  "GBPJPY": "high"
 }
