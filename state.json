@@ -13,8 +13,8 @@
   "EURAUD": null,
   "AUDJPY": null,
   "NZDJPY": null,
-  "GBPCAD": "high",
-  "EURCAD": "high",
+  "GBPCAD": null,
+  "EURCAD": null,
   "AUDNZD": null,
   "NZDCHF": null,
   "GBPCHF": null,
@@ -22,9 +22,9 @@
   "CADCHF": null,
   "GBPNZD": null,
   "EURNZD": null,
-  "NZDCAD": "high",
+  "NZDCAD": null,
   "EURGBP": null,
-  "AUDCAD": "high",
+  "AUDCAD": null,
   "CADJPY": null,
   "GBPJPY": null
 }
